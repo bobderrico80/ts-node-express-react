@@ -1,0 +1,20 @@
+{
+  "name": "ts-node-express-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "dev": "ts-node-dev --respawn --transpileOnly ./server.ts"
+  },
+  "author": "bobderrico80@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "4.17.1",
+    "ts-node-dev": "1.0.0-pre.43",
+    "typescript": "3.6.3"
+  },
+  "dependencies": {
+    "express": "4.17.1"
+  }
+}
