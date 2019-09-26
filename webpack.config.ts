@@ -11,6 +11,14 @@ const config: Configuration = {
 		path: path.resolve(__dirname, 'dist'),
 		publicPath: '/'
 	},
+	resolve: {
+		extensions: [".ts", ".tsx", ".js"]
+	},
+	module: {
+		rules: [
+		  { test: /\.tsx?$/, loader: "ts-loader" }
+		]
+	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			template: './app/index.html'

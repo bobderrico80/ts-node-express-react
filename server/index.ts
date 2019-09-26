@@ -2,8 +2,13 @@ import express from 'express';
 import server from './server';
 import path from 'path';
 
-server.use(express.static(path.join(__dirname, '../dist')));
+const PORT = process.env.PORT || 8081;
+const SERVE_STATIC = process.env.SERVE_STATIC === 'false' ? false : true;
 
-server.listen(8081, () => {
-	console.log('Server listening on port 8081');
+if (SERVE_STATIC) {
+	server.use(express.static(path.join(__dirname, '../dist')));
+}
+
+server.listen(PORT, () => {
+	console.log(`Server listening on port ${PORT}`);
 });
