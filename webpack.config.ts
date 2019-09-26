@@ -5,7 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 const config: Configuration = {
 	mode: 'development',
-	entry: './app/index.ts',
+	entry: './app/index.tsx',
 	output: {
 		filename: '[name].bundle.js',
 		path: path.resolve(__dirname, 'dist'),
@@ -16,7 +16,11 @@ const config: Configuration = {
 	},
 	module: {
 		rules: [
-		  { test: /\.tsx?$/, loader: "ts-loader" }
+			{
+				test: /\.tsx?$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader',
+			}
 		]
 	},
 	plugins: [
